@@ -1,5 +1,14 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for(let x = 0; x < array.length; x++){
+    const complement = target - array[x]
+    for(let y = x + 1; y < array.length; y++){
+      if(array[y] === complement){
+        return true
+      }
+    }
+  }
+  return false
 }
 
 /* 
@@ -8,6 +17,21 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+
+  Take in array and target number
+  check if number plus any (Other) number in array === target number
+  if yes return true, if no return false
+
+    forEach(num => {
+      index = 0
+      a = num[index]
+      b = num[index + 1]
+
+      if a + b === target number
+        return true
+      if index === array.length - 1
+        return false
+
 */
 
 /*
